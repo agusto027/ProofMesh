@@ -97,6 +97,21 @@ uv sync --extra postgres
 PROOFMESH_DATABASE_URL=postgresql+asyncpg://...
 ```
 
+
+
+
+## Architecture
+
+```mermaid
+flowchart TB
+    Client[MCP client] -->|Streamable HTTP /mcp| API[FastAPI service]
+    API --> Orch[Orchestrator]
+    Orch --> W[Workers]
+    W --> Tools[Evidence tools<br/>calculate, fetch_url, web_search]
+    W --> LLM[Model provider<br/>Ollama or OpenAI-compatible]
+    Orch --> DB[(SQLite or PostgreSQL<br/>run ledger)]
+```
+
 ## MCP tools
 
 | Tool | Description |
