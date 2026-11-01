@@ -1,5 +1,5 @@
 # ProofMesh
-<<<<<<< HEAD
+
 
 ProofMesh is an evidence-first orchestration service with a Python MCP server. It creates a task graph for each request, runs task-specific workers concurrently, records the run ledger in SQLite or PostgreSQL, checks claim evidence, and exposes run/result/evidence retrieval tools.
 
@@ -46,4 +46,4 @@ uv run pytest
 Tests use local schemas and deterministic mock components; no paid API key is needed.
 =======
 A complete backend multi agent system
->>>>>>> e35f3b0feec78af6d0d45a65b28dd3e61e47edae
+
