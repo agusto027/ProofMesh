@@ -34,17 +34,7 @@ stateDiagram-v2
 
 A claim with no relevant linked evidence cannot be marked supported. Unresolved claims stay qualified or disputed and appear in the caveats.
 
-## Architecture
 
-```mermaid
-flowchart TB
-    Client[MCP client] -->|Streamable HTTP /mcp| API[FastAPI service]
-    API --> Orch[Orchestrator]
-    Orch --> W[Workers]
-    W --> Tools[Evidence tools<br/>calculate, fetch_url, web_search]
-    W --> LLM[Model provider<br/>Ollama or OpenAI-compatible]
-    Orch --> DB[(SQLite or PostgreSQL<br/>run ledger)]
-```
 
 ## Requirements
 
